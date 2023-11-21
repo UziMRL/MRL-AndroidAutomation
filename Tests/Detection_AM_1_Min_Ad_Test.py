@@ -25,7 +25,7 @@ class Detection_AM_1_Min_Ad_Test(unittest.TestCase):
     def test_multi_ads_detections_AM_diff_ads_1_min_len_2_min_gap(self):
         #modify the gap and from where to take the ads
         gap = 120
-        play_from = "1_min_ads"
+        play_from = "wm_ads"
         sleep_before_detections = 360
         #---------------------------#
 
@@ -67,7 +67,7 @@ class Detection_AM_1_Min_Ad_Test(unittest.TestCase):
     @pytest.mark.order(2)
     def test_multi_ads_detections_AM_diff_ads_1_min_len_1_min_gap(self):
         gap = 60
-        play_from = "1_min_ads"
+        play_from = "wm_ads"
         sleep_before_detections = 360
         to_play = get_ads_to_play_from_dir(play_from)
 
@@ -94,8 +94,8 @@ class Detection_AM_1_Min_Ad_Test(unittest.TestCase):
         if self.infoPage.click_by(self.infoPage.Information_TTITLE_TEXT_SAMSUNG, "id"):
             self.infoPage.run_send_email_us()
 
-        if get_if_KotlinRecord_dir_exist(device_id=self.infoPage.device["deviceid"]):
-            copy_PCMs(self.infoPage.device["deviceid"],self.test_multi_ads_detections_AM_diff_ads_1_min_len_1_min_gap.__name__)
+        if get_if_KotlinRecord_dir_exist(device_id=self.infoPage.device["device_id"]):
+            copy_PCMs(self.infoPage.device["device_id"],self.test_multi_ads_detections_AM_diff_ads_1_min_len_1_min_gap.__name__)
 
         if not flag:
             assert False, msg
@@ -106,7 +106,7 @@ class Detection_AM_1_Min_Ad_Test(unittest.TestCase):
     @pytest.mark.order(3)
     def test_multi_ads_detections_AM_diff_ads_1_min_len_30_sec_gap(self):
         gap = 30
-        play_from = "1_min_ads"
+        play_from = "wm_ads"
         sleep_before_detections = 360
         to_play = get_ads_to_play_from_dir(play_from)
 
@@ -144,7 +144,7 @@ class Detection_AM_1_Min_Ad_Test(unittest.TestCase):
     @pytest.mark.order(4)
     def test_multi_ads_detections_AM_diff_ads_1_min_len_5_sec_gap(self):
         gap = 5
-        play_from = "1_min_ads"
+        play_from = "wm_ads"
         sleep_before_detections = 360
         to_play = get_ads_to_play_from_dir(play_from)
 
@@ -182,7 +182,7 @@ class Detection_AM_1_Min_Ad_Test(unittest.TestCase):
     @pytest.mark.order(5)
     def test_multi_ads_detections_AM_diff_ads_1_min_len_without_gap(self):
         gap = 0
-        play_from = "1_min_ads"
+        play_from = "wm_ads"
         sleep_before_detections = 360
         to_play = get_ads_to_play_from_dir(play_from)
 
